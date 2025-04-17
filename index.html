@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Leonardo Marques</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Comforter+Brush&family=Lacquer&family=Monofett&family=Hanuman:wght@100;300;400;700;900&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <style>
+        /* Estilos globais para o body */
+        body {
+            margin: 0; /* Remove as margens padrão do body */
+            font-family: sans-serif; /* Define uma fonte padrão para o texto */
+            background-color: #e2d7d7; /* Define a cor de fundo da página */
+            overflow: hidden; /* Esconde qualquer barra de rolagem que possa aparecer */
+        }
+
+        /* Estilos para a logo no canto superior esquerdo */
+        .logo-top-left {
+            position: fixed; /* Fixa o elemento na tela, mesmo durante a rolagem */
+            top: 8px; /* Distância do topo da tela */
+            left: 30px; /* Distância da esquerda da tela */
+            font-family: 'Monofett', sans-serif; /* Aplica uma fonte estilizada para a logo */
+            font-size: 50px; /* Define o tamanho da fonte da logo */
+            color: #333; /* Define a cor do texto da logo */
+            text-shadow: 0px 4px 5px rgba(0, 0, 0, 0.3); /* Adiciona uma sombra ao texto da logo */
+            z-index: 10; /* Garante que a logo fique acima de outros elementos */
+            cursor: pointer; /* Muda o cursor para indicar que é clicável */
+        }
+
+        /* Estilos para os textos informativos no topo (esquerda, centro e direita) */
+        .info-top-left,
+        .info-top-right,
+        .center-top {
+            position: fixed; /* Fixa os elementos na tela */
+            color: #333; /* Define a cor do texto */
+            font-size: 12px; /* Define o tamanho da fonte */
+            font-weight: 400; /* Define a espessura da fonte */
+            text-shadow: 0px 4px 5px rgba(0, 0, 0, 0.3); /* Adiciona uma sombra ao texto */
+            z-index: 10; /* Garante que fiquem acima de outros elementos */
+        }
+
+        /* Estilos específicos para o texto informativo da esquerda */
+        .info-top-left {
+            top: 25px; /* Distância do topo */
+            left: 128px; /* Distância da esquerda */
+            text-align: left; /* Alinha o texto à esquerda */
+        }
+
+        /* Estilos específicos para o texto central */
+        .center-top {
+            top: 30px; /* Distância do topo */
+            left: 50%; /* Posiciona o elemento no centro horizontal */
+            transform: translateX(-50%); /* Centraliza o elemento corretamente */
+        }
+
+        /* Estilos específicos para o texto informativo da direita */
+        .info-top-right {
+            top: 25px; /* Distância do topo */
+            right: 125px; /* Distância da direita */
+            text-align: right; /* Alinha o texto à direita */
+        }
+
+        /* Estilos para a barra lateral de ícones sociais à esquerda */
+        .social-bar-left {
+            position: absolute; /* Posiciona o elemento relativamente ao seu ancestral mais próximo posicionado */
+            left: 40px; /* Distância da esquerda */
+            top: 60%; /* Posiciona o elemento a 60% do topo do seu contêiner */
+            transform: translateY(-50%); /* Centraliza verticalmente o elemento */
+            display: flex; /* Usa flexbox para organizar os ícones */
+            flex-direction: column; /* Organiza os ícones em coluna */
+            gap: 20px; /* Adiciona espaçamento entre os ícones */
+            z-index: 10; /* Garante que a barra fique acima de outros elementos */
+        }
+
+        /* Estilos para os links dentro da barra social */
+        .social-bar-left a {
+            font-size: 38px; /* Define o tamanho dos ícones */
+            color: #333; /* Define a cor dos ícones */
+            opacity: 0.8; /* Define a opacidade inicial dos ícones */
+            transition: opacity 0.3s ease; /* Adiciona uma transição suave para o efeito de hover */
+        }
+
+        /* Estilos para o efeito de hover nos ícones sociais */
+        .social-bar-left a:hover {
+            opacity: 1; /* Torna o ícone totalmente opaco ao passar o mouse */
+        }
+
+        /* Estilos para a área de conteúdo principal */
+        .content {
+            position: relative; /* Permite que elementos filhos sejam posicionados relativamente a ele */
+            display: flex; /* Usa flexbox para centralizar o conteúdo */
+            flex-direction: column; /* Organiza os itens em coluna */
+            justify-content: center; /* Centraliza verticalmente os itens */
+            align-items: center; /* Centraliza horizontalmente os itens */
+            min-height: 100vh; /* Garante que a seção ocupe pelo menos a altura da tela */
+            padding: 20px; /* Adiciona um pequeno preenchimento ao redor do conteúdo */
+        }
+
+        /* Estilos para o fundo com efeito de blur */
+        .fundo-blur {
+            backdrop-filter: blur(6px); /* Aplica um efeito de blur ao fundo (atrás do elemento) */
+            -webkit-backdrop-filter: blur(6px); /* Prefixo para navegadores Safari e outros */
+            width: 100%; /* Ocupa toda a largura do contêiner */
+            height: 100%; /* Ocupa toda a altura do contêiner */
+            position: absolute; /* Posiciona o elemento absolutamente dentro do seu contêiner */
+            z-index: 0; /* Garante que o blur fique atrás do texto principal */
+        }
+
+        /* Estilos para o título de erro "ERROR" */
+        .error {
+            font-family: 'Lacquer', sans-serif; /* Aplica uma fonte estilizada */
+            font-size: 260px; /* Define o tamanho da fonte */
+            color: #333; /* Define a cor do texto */
+            text-shadow: 2px 2px 0 #ff00c1, -2px -2px 0 #00fff2; /* Adiciona um efeito de "glitch" com sombras coloridas */
+            position: absolute; /* Posiciona o elemento absolutamente dentro do seu contêiner */
+            top: 27%; /* Posiciona o topo do elemento a 27% do topo do contêiner */
+            left: 45%; /* Posiciona a esquerda do elemento a 45% da esquerda do contêiner */
+            transform: translate(-50%, -50%); /* Centraliza o elemento corretamente */
+            z-index: 1; /* Garante que o texto fique acima do fundo blur */
+            transition: all 0.3s ease; /* Adiciona uma transição suave para futuras alterações */
+        }
+
+        /* Estilos para o efeito de hover no título de erro (ativa a animação glitch) */
+        .error:hover {
+            animation: glitch-animation 0.8s infinite; /* Aplica a animação "glitch-animation" ao passar o mouse */
+        }
+
+        /* Estilos para o número "404." */
+        .number {
+            font-family: 'Hanuman', sans-serif; /* Aplica outra fonte estilizada */
+            font-size: 80px; /* Define o tamanho da fonte */
+            position: absolute; /* Posiciona o elemento absolutamente */
+            top: 55%; /* Posiciona o topo do elemento */
+            left: 107%; /* Posiciona a esquerda do elemento (fora da tela inicialmente) */
+            transform: translate(-50%, -50%); /* Centraliza o elemento */
+            color: rgba(51, 51, 51, 0.99); /* Define a cor do texto com um pouco de transparência */
+        }
+
+        /* Estilos para o link do portfólio */
+        .portfolio-link {
+            font-family: 'Comforter Brush', cursive; /* Aplica uma fonte manuscrita */
+            color: #ff5e00; /* Define a cor do texto */
+            font-size: 70px; /* Define o tamanho da fonte */
+            position: absolute; /* Posiciona o elemento absolutamente */
+            top: 70%; /* Posiciona o topo do elemento */
+            left: 45%; /* Posiciona a esquerda do elemento */
+            transform: translate(-50%, -50%) rotate(-5deg); /* Centraliza e rotaciona o elemento */
+            letter-spacing: 2px; /* Adiciona espaçamento entre as letras */
+            text-decoration: none; /* Remove o sublinhado padrão do link */
+            transition: color 0.3s ease; /* Adiciona uma transição suave para a mudança de cor */
+            z-index: 1; /* Garante que o link fique acima do fundo blur */
+        }
+
+        /* Estilos para a transição entre telas */
+        .tela {
+            position: absolute; /* Posiciona as telas absolutamente */
+            width: 100%; /* Ocupa toda a largura do contêiner */
+            height: 100%; /* Ocupa toda a altura do contêiner */
+            top: 0; /* Alinha ao topo do contêiner */
+            left: 0; /* Alinha à esquerda do contêiner */
+            opacity: 0; /* Inicialmente invisível */
+            transform: translateY(100px) scale(0.98); /* Posiciona abaixo e um pouco menor */
+            transition: opacity 0.6s ease, transform 0.6s ease; /* Adiciona transições suaves para opacidade e transformação */
+            pointer-events: none; /* Impede interações com telas não ativas */
+            z-index: 0; /* Inicialmente atrás de outras telas */
+        }
+
+        /* Estilos para a tela ativa */
+        .tela.ativa {
+            opacity: 1; /* Torna a tela visível */
+            transform: translateY(0px) scale(1); /* Posiciona no centro e com escala normal */
+            pointer-events: auto; /* Permite interações com a tela ativa */
+            z-index: 1; /* Coloca a tela ativa acima de outras */
+        }
+
+        /* Animação "glitch" */
+        @keyframes glitch-animation {
+            0% {
+                text-shadow: 2px 2px 0 #ff00c1, -2px -2px 0 #00fff2;
+                transform: translate(-50%, -50%);
+            }
+            20% {
+                text-shadow: -2px -2px 0 #ff00c1, 2px 2px 0 #00fff2;
+            }
+            40% {
+                text-shadow: 2px -2px 0 #ff00c1, -2px 2px 0 #00fff2;
+            }
+            60% {
+                text-shadow: -1px 1px 0 #ff00c1, 1px -1px 0 #00fff2;
+            }
+            80% {
+                text-shadow: 1px -1px 0 #ff00c1, -1px 1px 0 #00fff2;
+            }
+            100% {
+                text-shadow: 2px 2px 0 #ff00c1, -2px -2px 0 #00fff2;
+                transform: translate(-50%, -50%);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="logo-top-left" onclick="trocarTela('tela-erro')">LM</div>
+    <div class="info-top-left">
+        <span>Leonardo Marques<br><small>Web Developer</small></span>
+    </div>
+    <div class="center-top">Front End</div>
+    <div class="info-top-right">
+        <span>UI/UX<br><small>Designer</small></span>
+    </div>
+
+    <aside class="social-bar-left">
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#"><i class="fas fa-envelope"></i></a>
+        <a href="#"><i class="fab fa-github"></i></a>
+    </aside>
+
+    <div id="tela-erro" class="content tela ativa">
+        <div class="fundo-blur"></div>
+        <h1 class="error">ERROR <span class="number">-404.</span></h1>
+        <a href="#" class="portfolio-link" onclick="trocarTela('tela-portfolio')">+(Portfolio-)</a>
+    </div>
+
+    <section id="tela-portfolio" class="content tela">
+        <h2 style="font-family: 'Hanuman', sans-serif; font-size: 50px; color: #333;">
+            Bem-vindo ao Portfólio!
+        </h2>
+    </section>
+
+    <script>
+        // Função para trocar a tela visível
+        function trocarTela(idNova) {
+            // Seleciona todas as telas
+            const telas = document.querySelectorAll('.tela');
+            // Remove a classe 'ativa' de todas as telas, escondendo-as
+            telas.forEach(tela => tela.classList.remove('ativa'));
+
+            // Seleciona a nova tela a ser exibida pelo seu ID
+            const novaTela = document.getElementById(idNova);
+            // Adiciona a classe 'ativa' à nova tela com um pequeno atraso para permitir a transição CSS
+            setTimeout(() => novaTela.classList.add('ativa'), 10);
+        }
+
+        // Seleciona o elemento do título de erro para aplicar o efeito glitch
+        const errorElement = document.querySelector('.error');
+
+        // Adiciona um ouvinte de evento para quando o mouse entra no elemento
+        errorElement.addEventListener('mouseenter', () => {
+            // Aplica a animação glitch ao passar o mouse
+            errorElement.style.animation = 'glitch-animation 0.8s infinite';
+        });
+
+        // Adiciona um ouvinte de evento para quando o mouse sai do elemento
+        errorElement.addEventListener('mouseleave', () => {
+            // Remove a animação glitch ao sair do mouse, fazendo o efeito parar
+            errorElement.style.animation = '';
+        });
+    </script>
+</body>
+</html>
