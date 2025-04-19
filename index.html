@@ -6,273 +6,142 @@
     <title>Leonardo Marques</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Comforter+Brush&family=Lacquer&family=Monofett&family=Hanuman:wght@100;300;400;700;900&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+Claro! Aqui está o seu código HTML atualizado com as sugestões de responsividade implementadas:
+
+```html
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Leonardo Marques</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Comforter+Brush&family=Lacquer&family=Monofett&family=Hanuman:wght@100;300;400;700;900&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
     <style>
-/* ==========================================================================
+        /* ==========================================================================
            ESTILOS GLOBAIS
            ========================================================================== */
         body {
-            margin: 0; /* Remove as margens padrão do corpo da página */
-            font-family: sans-serif; /* Define uma fonte padrão para todo o texto */
-            background-color: #e2d7d7; /* Define a cor de fundo da página */
-            overflow: hidden; /* Esconde barras de rolagem que possam aparecer */
+            margin: 0; 
+            font-family: sans-serif; 
+            background-color: #e2d7d7; 
+            overflow: hidden; 
         }
 
-        
         /* ==========================================================================
            ESTILOS DO CABEÇALHO (ELEMENTOS FIXOS NO TOPO)
            ========================================================================== */
-        /* Logo no canto superior esquerdo */
         .logo-top-left {
-            position: fixed; /* Fixa o elemento na tela, mesmo durante a rolagem */
-            top: 0.8vh; /* Distância do topo da tela, relativa à altura da viewport (1% da altura da tela) */
-            left: 3vw; /* Distância da esquerda da tela, relativa à largura da viewport (3% da largura da tela) */
-            font-family: 'Monofett', sans-serif; /* Aplica uma fonte estilizada para a logo */
-            font-size: 5vh; /* Tamanho da fonte da logo, relativo à altura da viewport (5% da altura da tela) */
-            color: #333; /* Cor do texto da logo */
-            text-shadow: 0px 0.4vh 0.5vh rgba(0, 0, 0, 0.3); /* Sombra no texto da logo (valores relativos à altura da viewport) */
-            z-index: 10; /* Garante que a logo fique acima de outros elementos */
-            cursor: pointer; /* Muda o cursor para indicar que é clicável */
+            position: fixed; 
+            top: 0.8vh; 
+            left: 3vw; 
+            font-family: 'Monofett', sans-serif; 
+            font-size: 5vh; 
+            color: #333; 
+            text-shadow: 0px 0.4vh 0.5vh rgba(0, 0, 0, 0.3); 
+            z-index: 10; 
+            cursor: pointer; 
         }
 
-        /* Textos informativos no topo (esquerda, centro e direita) */
         .info-top-left,
         .info-top-right,
         .center-top {
-            position: fixed; /* Fixa os elementos na tela */
-            color: #333; /* Cor do texto */
-            font-size: 1.2vh; /* Tamanho da fonte, relativo à altura da viewport (1.2% da altura da tela) */
-            font-weight: 400; /* Espessura da fonte normal */
-            text-shadow: 0px 0.4vh 0.5vh rgba(0, 0, 0, 0.3); /* Sombra no texto (valores relativos à altura da viewport) */
-            z-index: 10; /* Garante que fiquem acima de outros elementos */
+            position: fixed; 
+            color: #333; 
+            font-size: 1.2vh; 
+            font-weight: 400; 
+            text-shadow: 0px 0.4vh 0.5vh rgba(0, 0, 0, 0.3); 
+            z-index: 10; 
         }
 
-        /* Texto informativo da esquerda */
         .info-top-left {
-            top: 2.5vh; /* Distância do topo (2.5% da altura da tela) */
-            left: 12.8vw; /* Distância da esquerda (12.8% da largura da tela) */
-            text-align: left; /* Alinha o texto à esquerda */
+            top: 2.5vh; 
+            left: 12.8vw; 
+            text-align: left; 
         }
 
-        /* Texto central */
         .center-top {
-            top: 3vh; /* Distância do topo (3% da altura da tela) */
-            left: 50%; /* Posiciona o elemento no centro horizontal */
-            transform: translateX(-50%); /* Centraliza o elemento corretamente */
+            top: 3vh; 
+            left: 50%; 
+            transform: translateX(-50%); 
         }
 
-        /* Texto informativo da direita */
         .info-top-right {
-            top: 2.5vh; /* Distância do topo (2.5% da altura da tela) */
-            right: 12.5vw; /* Distância da direita (12.5% da largura da tela) */
-            text-align: right; /* Alinha o texto à direita */
+            top: 2.5vh; 
+            right: 12.5vw; 
+            text-align: right; 
         }
 
         /* ==========================================================================
            ESTILOS DA BARRA SOCIAL LATERAL
            ========================================================================== */
-        /* Barra de ícones sociais à esquerda */
         .social-bar-left {
-            position: absolute; /* Posiciona o elemento relativamente ao seu ancestral posicionado */
-            left: 4vw; /* Distância da esquerda (4% da largura da tela) */
-            top: 60%; /* Posiciona o elemento a 60% do topo do seu contêiner */
-            transform: translateY(-50%); /* Centraliza verticalmente o elemento */
-            display: flex; /* Usa flexbox para organizar os ícones */
-            flex-direction: column; /* Organiza os ícones em coluna */
-            gap: 2vh; /* Espaçamento entre os ícones (2% da altura da tela) */
-            z-index: 10; /* Garante que a barra fique acima de outros elementos */
+            position: absolute; 
+            left: 4vw; 
+            top: 60%; 
+            transform: translateY(-50%); 
+            display: flex; 
+            flex-direction: column; 
+            gap: 2vh; 
+            z-index: 10; 
         }
 
-        /* Links dentro da barra social */
         .social-bar-left a {
-            font-size: 3.8vh; /* Tamanho dos ícones (3.8% da altura da tela) */
-            color: #333; /* Cor dos ícones */
-            opacity: 0.8; /* Opacidade inicial dos ícones (80%) */
-            transition: opacity 0.3s ease; /* Transição suave para o efeito de hover (0.3 segundos) */
+            font-size: 3.8vh; 
+            color: #333; 
+            opacity: 0.8; 
+            transition: opacity 0.3s ease; 
         }
 
-        /* Efeito de hover nos ícones sociais */
         .social-bar-left a:hover {
-            opacity: 1; /* Torna o ícone totalmente opaco ao passar o mouse */
+            opacity: 1; 
         }
 
         /* ==========================================================================
            ESTILOS DO CONTEÚDO PRINCIPAL (TELAS)
            ========================================================================== */
-        /* Container principal que engloba as telas */
         .content {
-            position: relative; /* Permite que elementos filhos sejam posicionados relativamente a ele */
-            display: flex; /* Usa flexbox para centralizar o conteúdo */
-            flex-direction: column; /* Organiza os itens em coluna */
-            justify-content: center; /* Centraliza verticalmente os itens */
-            align-items: center; /* Centraliza horizontalmente os itens */
-            min-height: 100vh; /* Garante que a seção ocupe pelo menos a altura total da tela */
-            padding: 2vh 2vw; /* Preenchimento ao redor do conteúdo (2% da altura e 2% da largura da tela) */
+            position: relative; 
+            display: flex; 
+            flex-direction: column; 
+            justify-content: center; 
+            align-items: center; 
+            min-height: 100vh; 
+            padding: 2vh 2vw; 
         }
 
-        /* Fundo com efeito de blur */
         .fundo-blur {
-            backdrop-filter: blur(0.6vh); /* Aplica um efeito de blur ao fundo (atrás do elemento), raio relativo à altura da viewport */
-            -webkit-backdrop-filter: blur(0.6vh); /* Prefixo para navegadores Safari e outros */
-            width: 100%; /* Ocupa toda a largura do contêiner */
-            height: 100%; /* Ocupa toda a altura do contêiner */
-            position: absolute; /* Posiciona o elemento absolutamente dentro do seu contêiner */
-            z-index: 0; /* Garante que o blur fique atrás do texto principal */
+            backdrop-filter: blur(0.6vh); 
+            -webkit-backdrop-filter: blur(0.6vh); 
+            width: 100%; 
+            height: 100%; 
+            position: absolute; 
+            z-index: 0; 
         }
 
-        /* Título de erro "ERROR" na primeira tela */
         .error {
-            font-family: 'Lacquer', sans-serif; /* Aplica uma fonte estilizada */
-            font-size: 45vh; /* Tamanho da fonte, relativo à altura da viewport (26% da altura da tela) */
-            color: #333; /* Cor do texto */
-            text-shadow: 0.2vh 0.2vh 0 #ff00c1, -0.2vh -0.2vh 0 #00fff2; /* Efeito de "glitch" com sombras coloridas (valores relativos à altura da viewport) */
-            position: absolute; /* Posiciona o elemento absolutamente dentro do seu contêiner */
-            top: 20%; /* Posiciona o topo do elemento a 27% do topo do contêiner */
-            left: 45%; /* Posiciona a esquerda do elemento a 45% da esquerda do contêiner */
-            transform: translate(-50%, -50%); /* Centraliza o elemento corretamente */
-            z-index: 1; /* Garante que o texto fique acima do fundo blur */
-            transition: all 0.3s ease; /* Transição suave para futuras alterações (0.3 segundos) */
+            font-family: 'Lacquer', sans-serif; 
+            font-size: 45vh; 
+            color: #333; 
+            text-shadow: 0.2vh 0.2vh 0 #ff00c1, -0.2vh -0.2vh 0 #00fff2; 
+            position: absolute; 
+            top: 20%; 
+            left: 45%; 
+            transform: translate(-50%, -50%); 
+            z-index: 1; 
+            transition: all 0.3s ease; 
         }
 
-        /* Efeito de hover no título de erro (ativa a animação glitch) */
         .error:hover {
-            animation: glitch-animation 0.8s infinite; /* Aplica a animação "glitch-animation" ao passar o mouse (0.8 segundos, infinitamente) */
+            animation: glitch-animation 0.8s infinite; 
         }
 
-        /* Número "404." na primeira tela */
         .number {
-            font-family: 'Hanuman', sans-serif; /* Aplica outra fonte estilizada */
-            font-size: 12vh; /* Tamanho da fonte, relativo à altura da viewport (8% da altura da tela) */
-            position: absolute; /* Posiciona o elemento absolutamente */
-            top: 55%; /* Posiciona o topo do elemento a 55% do topo do contêiner */
-            left: 107%; /* Posiciona a esquerda do elemento (inicialmente fora da tela para efeito) */
-            transform: translate(-50%, -50%); /* Centraliza o elemento */
-            color: rgba(51, 51, 51, 0.99); /* Cor do texto com um pouco de transparência (99% de opacidade) */
-        }
-
-        /* Link para o portfólio na primeira tela */
-        .portfolio-link {
-            font-family: 'Comforter Brush', cursive; /* Aplica uma fonte manuscrita */
-            color: #ff5e00; /* Cor do texto */
-            font-size: 12vh; /* Tamanho da fonte, relativo à altura da viewport (7% da altura da tela) */
-            position: absolute; /* Posiciona o elemento absolutamente */
-            top: 70%; /* Posiciona o topo do elemento a 70% do topo do contêiner */
-            left: 45%; /* Posiciona a esquerda do elemento a 45% da esquerda do contêiner */
-            transform: translate(-50%, -50%) rotate(-5deg); /* Centraliza e rotaciona o elemento em -5 graus */
-            letter-spacing: 0.2vh; /* Espaçamento entre as letras, relativo à altura da viewport (0.2% da altura da tela) */
-            text-decoration: none; /* Remove o sublinhado padrão do link */
-            transition: color 0.3s ease; /* Transição suave para a mudança de cor (0.3 segundos) */
-            z-index: 1; /* Garante que o link fique acima do fundo blur */
-        }
-
-        /* ==========================================================================
-           ESTILOS PARA A TRANSIÇÃO ENTRE TELAS
-           ========================================================================== */
-        /* Estilos base para as telas (inicialmente escondidas) */
-        .tela {
-            position: absolute; /* Posiciona as telas absolutamente dentro do .content */
-            width: 100%; /* Ocupa toda a largura do .content */
-            height: 100%; /* Ocupa toda a altura do .content */
-            top: 0; /* Alinha ao topo do .content */
-            left: 0; /* Alinha à esquerda do .content */
-            opacity: 0; /* Inicialmente invisível */
-            transform: translateY(100px) scale(0.98); /* Posiciona 100px abaixo e com escala 0.98 */
-            transition: opacity 0.6s ease, transform 0.6s ease; /* Transições suaves para opacidade e transformação (0.6 segundos) */
-            pointer-events: none; /* Impede interações com telas não ativas */
-            z-index: 0; /* Inicialmente atrás de outras telas */
-        }
-
-        /* Estilos para a tela ativa (visível) */
-        .tela.ativa {
-            opacity: 1; /* Torna a tela visível (opacidade 1) */
-            transform: translateY(0px) scale(1); /* Posiciona no centro e com escala normal (1) */
-            pointer-events: auto; /* Permite interações com a tela ativa */
-            z-index: 1; /* Coloca a tela ativa acima de outras */
-        }
-
-        /* ==========================================================================
-           ANIMAÇÃO "GLITCH"
-           ========================================================================== */
-        /* Definição da animação glitch */
-        @keyframes glitch-animation {
-            0% {
-                text-shadow: 0.2vh 0.2vh 0 #ff00c1, -0.2vh -0.2vh 0 #00fff2;
-                transform: translate(-50%, -50%);
-            }
-            20% {
-                text-shadow: -0.2vh -0.2vh 0 #ff00c1, 0.2vh 0.2vh 0 #00fff2;
-            }
-            40% {
-                text-shadow: 0.2vh -0.2vh 0 #ff00c1, -0.2vh 0.2vh 0 #00fff2;
-            }
-            60% {
-                text-shadow: -0.1vh 0.1vh 0 #ff00c1, 0.1vh -0.1vh 0 #00fff2;
-            }
-            80% {
-                text-shadow: 0.1vh -0.1vh 0 #ff00c1, -0.1vh 0.1vh 0 #00fff2;
-            }
-            100% {
-                text-shadow: 0.2vh 0.2vh 0 #ff00c1, -0.2vh -0.2vh 0 #00fff2;
-                transform: translate(-50%, -50%);
-            }
-        }
-
-        /* ==========================================================================
-           ESTILOS RESPONSIVOS (PARA DIFERENTES TAMANHOS DE TELA)
-           ========================================================================== */
-        /* Para telas menores que 768px de largura (celulares) */
-        @media (max-width: 768px) {
-            .logo-top-left {
-                font-size: 4vh; /* Reduz o tamanho da fonte da logo */
-                left: 4vw; /* Ajusta a distância da esquerda */
-                top: 1vh; /* Ajusta a distância do topo */
-            }
-
-            .info-top-left,
-            .info-top-right,
-            .center-top {
-                font-size: 2vh; /* Reduz o tamanho da fonte dos textos informativos */
-            }
-
-            .info-top-left {
-                left: 15vw; /* Ajusta a distância da esquerda */
-                top: 1.5vh; /* Ajusta a distância do topo */
-            }
-
-            .center-top {
-                top: 2vh; /* Ajusta a distância do topo */
-            }
-
-            .info-top-right {
-                right: 15vw; /* Ajusta a distância da direita */
-                top: 1.5vh; /* Ajusta a distância do topo */
-            }
-
-            .social-bar-left {
-                left: 2vw; /* Ajusta a distância da esquerda */
-                top: auto; /* Remove o posicionamento automático pelo topo */
-                bottom: 2vh; /* Posiciona a barra na parte inferior */
-                flex-direction: row; /* Organiza os ícones em linha */
-                gap: 1vw; /* Reduz o espaçamento entre os ícones */
-                transform: translateY(0); /* Remove a transformação vertical */
-            }
-
-            .social-bar-left a {
-                font-size: 4vh; /* Reduz o tamanho dos ícones */
-            }
-
-            .error {
-                font-size: 18vh; /* Reduz o tamanho da fonte do erro */
-                top: 30%; /* Ajusta a posição vertical */
-            }
-
-            .number {
-                font-size: 6vh; /* Reduz o tamanho da fonte do número */
-                top: 50%; /* Ajusta a posição vertical */
-                left: 50%; /* Centraliza horizontalmente */
-                transform: translateX(15%); /* Pequeno ajuste na posição horizontal */
-            }
-
+            font-family: 'Hanuman', sans-serif; 
+            font-size: 12vh; 
+            position: absolute; 
+}
             .portfolio-link {
                 font-size: 5vh; /* Reduz o tamanho da fonte do link */
                 top: 65%; /* Ajusta a posição vertical */
