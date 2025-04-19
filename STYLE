@@ -224,7 +224,7 @@
             .info-top-left,
             .info-top-right,
             .center-top {
-                font-size: 1vh; /* Reduz o tamanho da fonte dos textos informativos */
+                font-size: 2vh; /* Reduz o tamanho da fonte dos textos informativos */
             }
 
             .info-top-left {
@@ -251,7 +251,7 @@
             }
 
             .social-bar-left a {
-                font-size: 3vh; /* Reduz o tamanho dos ícones */
+                font-size: 4vh; /* Reduz o tamanho dos ícones */
             }
 
             .error {
